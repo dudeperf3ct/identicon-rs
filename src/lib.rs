@@ -84,7 +84,7 @@ impl Identicon {
         (red_value, green_value, blue_value)
     }
 
-    pub fn render_pattern(&self, rgb_color: &(u8, u8, u8), block_grid: &[bool]) {
+    pub fn render_pattern(&self, rgb_color: &(u8, u8, u8), block_grid: &[bool], out_path: &str) {
         // Convert block pattern to image pattern
         // each value from block grid corresponds to 5 x 5 block in image
         let mut block_img = RgbImage::new(self.block_width, self.block_height);
@@ -105,6 +105,6 @@ impl Identicon {
             self.height,
             imageops::FilterType::Nearest,
         );
-        let _ = final_img.save("test.png");
+        let _ = final_img.save(out_path);
     }
 }

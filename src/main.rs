@@ -22,6 +22,8 @@ struct CliArgs {
     /// Pattern generation approach
     #[arg(long, value_enum, default_value_t = Pattern::Symmetrical)]
     pattern: Pattern,
+    // Output path ends with .png
+    output_path: String,
 }
 
 fn main() {
@@ -40,7 +42,7 @@ fn main() {
     // Walk through hash and turn pixel on or off depending on even or odd value
     let generated_pattern = identicon.generate_pattern(&unique_hash, args.pattern);
     let rgb_color = identicon.get_random_color(&unique_hash);
-    identicon.render_pattern(&rgb_color, &generated_pattern);
+    identicon.render_pattern(&rgb_color, &generated_pattern, args.output_path.as_str());
 
-    println!("Generated indeticon at test.png")
+    println!("Generated indeticon at {}", args.output_path)
 }
