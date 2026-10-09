@@ -15,8 +15,8 @@ Identicons are unique visual representation created from hash value of data. Dat
 There are two patterns supported: `asymmetrical` and `symmetrical`.
 
 ```bash
-cargo run -- foo 420 420 --pattern asymmetrical "foo_asym.path"
-cargo run -- foo 420 420 --pattern symmetrical "foo_sym.path"
+cargo run -- foo 420 420 --pattern asymmetrical "foo_asym.png"
+cargo run -- foo 420 420 --pattern symmetrical "foo_sym.png"
 ```
 
 ## Example
